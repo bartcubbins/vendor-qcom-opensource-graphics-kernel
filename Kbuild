@@ -2,8 +2,12 @@
 
 KDIR := $(TOP)/kernel_platform/common
 
+ifeq ($(KERNEL_SRC),)
+KERNEL_SRC := $(srctree)
+endif
+
 ifeq ($(KGSL_PATH),)
-KGSL_PATH=$(src)
+KGSL_PATH := $(KERNEL_SRC)/techpack/graphics
 endif
 
 # If we're not GVM and not in an Android tree, select KGSL config
