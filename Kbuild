@@ -90,7 +90,7 @@ ifeq ($(CONFIG_ARCH_KERA), y)
 	subdir-ccflags-y += $(LE_EXTRA_CFLAGS)
 endif
 
-ccflags-y += -I$(KGSL_PATH) -I$(KGSL_PATH)/include/linux -I$(KGSL_PATH)/include -I$(KERNEL_SRC)/drivers/devfreq
+ccflags-y += -I$(KGSL_PATH) -I$(KGSL_PATH)/include/linux -I$(KGSL_PATH)/include -I$(KERNEL_SRC)/drivers/devfreq -I$(KGSL_PATH)/../mm/hw_fence/include
 
 obj-$(CONFIG_QCOM_KGSL) += msm_kgsl.o
 
